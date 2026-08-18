@@ -1,20 +1,17 @@
-Tarun.Graphicarivihan/
-│
-├── index.html              ← Main website
-│
-├── css/
-│   └── style.css           ← Pura design
-│
-├── js/
-│   ├── app.js              ← Main system
-│   ├── folders.js          ← Folder system
-│   ├── upload.js           ← Image upload
-│   ├── scanner.js          ← AI/OCR scanning
-│   ├── search.js           ← Search/filter
-│   ├── viewer.js           ← Zoom/fullscreen
-│   └── storage.js          ← Data/storage
-│
-├── assets/
-│   └── logo.png
-│
-└── README.md
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Arivihan Graphic Gallery</title>
+<link rel="stylesheet" href="css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+</head>
+<body>
+<header><div class="logo">ARIVIHAN <span>GRAPHIC GALLERY</span></div><label class="primary">+ Add Images<input id="imageInput" type="file" accept="image/*" multiple></label></header>
+<div class="layout"><aside class="sidebar"><h3>LIBRARY</h3><div id="folders"></div></aside>
+<main><div class="topbar"><div><h1 id="pageTitle">Thumbnails</h1><p>Shared team graphic library · automatic text/date scanning</p></div><input id="searchInput" class="search" placeholder="Search thumbnail, text, date..."></div>
+<div class="toolbar"><button id="newest">Newest</button><button id="oldest">Oldest</button><button id="scanAll">🔍 Scan Images</button></div><div id="status" class="status">0 images</div><div id="gallery" class="gallery"></div></main></div>
+<div id="viewerModal" class="modal"><div class="viewer"><button id="closeViewer" class="close">×</button><img id="viewerImage" alt="Preview"></div></div>
+<div id="progressBox" class="progress-box"><div id="progressText">Scanning...</div><div class="progress-bar"><div id="progressFill"></div></div></div>
+<script src="js/storage.js"></script><script src="js/folders.js"></script><script src="js/upload.js"></script><script src="js/scanner.js"></script><script src="js/viewer.js"></script><script src="js/search.js"></script><script src="js/app.js"></script>
+</body></html>
